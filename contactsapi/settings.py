@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'authentication',
     'contacts',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -117,6 +119,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# CORS
+CORS_ALLOW_ALL_ORIGINS=True
 # JWT
 JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
 
